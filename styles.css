@@ -1,3 +1,20 @@
+@font-face {
+    font-family: KarlaBold;
+    src:
+        url("fonts/Karla-Bold.woff2") format("woff2"),
+        url("fonts/Karla-Bold.woff") format("woff"),
+        url("fonts/Karla-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: KarlaRegular;
+    src:
+        url("fonts/Karla-Regular.woff2") format("woff2"),
+        url("fonts/Karla-Regular.woff") format("woff"),
+        url("fonts/Karla-Regular.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,5 +22,136 @@
 }
 
 body {
+    background-color: var(--grayish-blue);
+    margin: 30px;
+}
 
+header {
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 25px 35px;
+}
+
+main {
+    background-color: var(--cyan);
+    color: var(--light-gray);
+    padding: 25px;
+}
+
+footer {
+    background-color: var(--light-cyan);
+    padding: 30px;
+    color: var(--light-gray);
+}
+
+header h1 {
+    font-family: KarlaBold, sans-serif;
+    font-weight: 700;
+    color: var(--cyan);
+    font-size: 1.25em;
+}
+
+header h2 {
+    font-family: KarlaBold, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--bright-yellow);
+}
+
+header p {
+    display: inline;
+    font-family: KarlaRegular, sans-serif;
+    color: var(--grayish-blue);
+    line-height: 1.5em;
+}
+
+main h2 {
+    font-family: KarlaBold, sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 30px;
+}
+
+main p {
+    font-family: KarlaRegular, sans-serif;
+}
+
+main button {
+    border: none;
+    font-family: KarlaBold, sans-serif;
+    font-size: 1.1em;
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    color: var(--light-gray);
+    background-color: var(--bright-yellow);
+}
+
+footer h2 {
+    font-family: KarlaBold, sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 30px;
+}
+
+footer p {
+    font-size: 0.9em;
+    font-family: KarlaRegular, sans-serif;
+}
+
+:root {
+    --cyan: hsl(179deg 62% 43%);
+    --light-cyan: hsl(180deg 60% 60%);
+    --bright-yellow: hsl(71deg 73% 54%);
+    --light-gray: hsl(204deg 43%  93%);
+    --grayish-blue: hsl(218deg 22% 67%);
+}
+
+.subscription {
+    color: var(--light-cyan);
+    font-family: KarlaRegular, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.cost {
+    font-family: KarlaBold, sans-serif;
+    font-size: 2em;
+    color: var(--light-gray);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(2, 320px);
+        grid-template-rows: 220px 260px;
+    }
+
+    header {
+        gap: 0;
+        grid-column: 1/3;
+        padding: 45px 40px;
+    }
+
+    main {
+        padding: 40px;
+    }
+
+    footer {
+        padding: 40px;
+    }
+
+    header h2 {
+        margin: 35px 0 20px;
+    }
+
+    footer h2 {
+        margin-bottom: 25px;
+    }
 }
